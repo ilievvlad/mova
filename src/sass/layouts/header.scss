@@ -1,0 +1,88 @@
+.header {
+	position: relative;
+
+	&.search-active {
+		.search__form {
+			top: 100%;
+			opacity: 1;
+			visibility: visible;
+		}
+		.search-btn {
+			color: var(--accent);
+
+			svg {
+				fill: var(--accent);
+			}
+		}
+	}
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		min-height: rem(70);
+	}
+
+	&__logo {
+		text-transform: uppercase;
+		font-weight: 700;
+		@include adaptiveValue("font-size", 35, 25);
+		color: var(--accent);
+	}
+
+	&__actions-list {
+		display: flex;
+		@include adaptiveValue("column-gap", 30, 15);
+	}
+
+	&__actions-item {
+		&:first-child {
+			display: none;
+		}
+
+		@media (max-width: $mobSmall) {
+			&:first-child {
+				display: flex;
+			}
+		}
+	}
+
+	&__actions-link {
+		display: flex;
+		align-items: center;
+		column-gap: rem(10);
+		padding: rem(5) 0;
+		@include adaptiveValue("font-size", 16, 12);
+		color: var(--gray);
+
+		&:first-child {
+			line-height: 1.15;
+		}
+
+		@media (any-hover: hover) {
+			transition: color var(--anim);
+			&:hover {
+				color: var(--accent);
+
+				.header__actions-icon {
+					fill: var(--accent);
+				}
+			}
+		}
+		@media (max-width: $mob) {
+			flex-direction: column;
+			justify-content: center;
+			row-gap: rem(5);
+		}
+	}
+
+	&__actions-icon {
+		@media (any-hover: hover) {
+			transition: fill var(--anim);
+		}
+		@media (max-width: $mob) {
+			width: rem(18);
+			height: rem(18);
+		}
+	}
+}

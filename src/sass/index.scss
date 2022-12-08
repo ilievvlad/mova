@@ -1,0 +1,19 @@
+@use "sass:math";
+
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
+/* Normalizing styles in the browser */
+@import "./base/normalize";
+
+// Utils
+@import "./utils/index";
+
+/* Components */
+@import "./components/index";
+
+// Header, Footer
+@import "./layouts/index";
+
+// Pages
+@import "./pages/index";

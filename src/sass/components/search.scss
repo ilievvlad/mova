@@ -1,0 +1,45 @@
+.search {
+	@media (min-width: $mobSmall) {
+		@include adaptiveValue("width", 400, 100);
+	}
+
+	&__form {
+		background-color: var(--lightGray);
+		display: flex;
+		align-items: center;
+
+		&:focus-within .search__icon {
+			fill: var(--accent);
+		}
+
+		@media (max-width: $mobSmall) {
+			box-shadow: 0 rem(5) rem(10) rgba(0, 0, 0, 0.2);
+			position: absolute;
+			width: 100%;
+			left: 0;
+			top: -100%;
+			z-index: 15;
+			opacity: 0;
+			visibility: hidden;
+			transition: all 0.5s ease;
+		}
+	}
+
+	&__icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex: 0 0 rem(45);
+		height: rem(45);
+		transition: fill var(--anim);
+	}
+
+	&__input {
+		background-color: transparent;
+		width: 100%;
+		font-weight: 500;
+		color: var(--gray);
+		padding-right: rem(20);
+		caret-color: var(--primary);
+	}
+}
